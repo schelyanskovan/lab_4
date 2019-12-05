@@ -21,5 +21,6 @@ public:
 	void insert(int index, std::string data);
 	void delete_el(int index);
 	void print_all();
+	void zal();
 	~List();
 };
