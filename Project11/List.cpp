@@ -1,8 +1,6 @@
 #include "List.h"
 #include <iostream>
 #include <string>
-
-
 List::List()
 {
 
@@ -36,7 +34,7 @@ Node * List::get_tail()
 	}
 	return tmp;
 }
-void List::push_back(std::string data)
+void List::push_back(Data data)
 {
 	Node*tmp = head;
 	while (tmp->next != 0)
@@ -44,9 +42,8 @@ void List::push_back(std::string data)
 		tmp = tmp->next;
 	}
 	
-
 }
-void List::insert(int index, std::string data)
+void List::insert(int index, Data data)
 {
 	if (index < 0 || index >= get_size()) throw "error";
 	Node*tmp = head;
@@ -100,11 +97,4 @@ List::~List()
 		tmp = nullptr;
 		tmp = tmp2;
 	}
-}
-
-int main()
-{
-
-	system("pause");
-	return 0;
 }

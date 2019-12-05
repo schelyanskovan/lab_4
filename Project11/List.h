@@ -1,12 +1,12 @@
 #pragma once
 #include <iostream>
 #include <string>
-
+typedef  std::string Data;
 struct Node
 {
-	std::string data;
+	Data data;
 	Node* next = 0;
-	Node(std::string d) : data(d) {}
+	Node(Data d) : data(d) {}
 };
 class List
 {
@@ -17,8 +17,8 @@ public:
 
 	int get_size();
 	Node* get_tail();//возвращает указатель на последний Node списка
-	void push_back(std:: string data);
-	void insert(int index, std::string data);
+	void push_back(Data data);
+	void insert(int index, Data data);
 	void delete_el(int index);
 	void print_all();
 	void zal();
