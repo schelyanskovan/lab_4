@@ -36,11 +36,11 @@ Node * List::get_tail()
 }
 void List::push_back(Data data)
 {
-	Node*tmp = head;
-	while (tmp->next != 0)
-	{
-		tmp = tmp->next;
-	}
+	Node*tmp = get_tail();
+	if (tmp == 0)
+		head = new Node(data);
+	else tmp->next=new Node(data);
+	
 	
 }
 void List::insert(int index, Data data)
@@ -74,12 +74,11 @@ void List::delete_el(int index)
 void List::print_all()
 {
 	Node*tmp = head;
-	if (head == 0)
-		std::cout<<"0";
-	while (tmp->next != 0)
+	if (head == 0) throw "list is empty";
+	while (tmp != 0)
 	{
+		std::cout << tmp->data << std::endl;
 		tmp = tmp->next;
-		std::cout << tmp;
 	}
 	
 		
